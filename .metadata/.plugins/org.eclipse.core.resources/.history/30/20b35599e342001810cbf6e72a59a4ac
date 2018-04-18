@@ -1,0 +1,5 @@
+package by.epam.vshishkarov.entity.equipment;
+
+public class EquipmentCreator {
+
+}

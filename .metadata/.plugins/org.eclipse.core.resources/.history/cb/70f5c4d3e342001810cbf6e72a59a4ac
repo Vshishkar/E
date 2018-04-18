@@ -1,0 +1,34 @@
+package by.epam.vshishkarov.entity.equipment;
+
+import java.util.ArrayList;
+
+
+
+public class Equipment {
+	
+	private String type;
+	private ArrayList<Attribute> attributes;
+	
+	Equipment(String type,ArrayList<Attribute> attributes){
+		this.type = type;
+		this.attributes = attributes;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public ArrayList<Attribute> getAttributes() {
+		return attributes;
+	}
+	public void setAttributes(ArrayList<Attribute> attributes) {
+		this.attributes = attributes;
+	} 
+	
+	public void addAtribute(Attribute atribute){
+		this.attributes.add(atribute);
+	}
+	
+}

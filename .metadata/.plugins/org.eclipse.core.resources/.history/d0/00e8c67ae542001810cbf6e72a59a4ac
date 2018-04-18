@@ -1,0 +1,9 @@
+package by.epam.vshishkarov.entity.equipment;
+
+public class EquipmentCreator {
+	
+	public Equipment createByString(String string){
+		
+	}
+
+}

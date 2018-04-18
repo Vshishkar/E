@@ -1,0 +1,8 @@
+package by.epam.vshishkarov.entity;
+
+public class Equipment {
+	
+	private String type;
+	private ArrayList<Attribute> attributes; 
+
+}
