@@ -73,10 +73,10 @@ public class Laptop extends Appliance{
     public String toString() {
         return "Laptop{" +
                 "displayInches=" + this.displayInches +
-                ", cpu='" + this.cpu + '\'' +
+                ", cpu='" + this.cpu + 
                 ", systemMemory=" +this. systemMemory +
                 ", memoryRom=" + this.memoryRom +
-                ", os='" + this.os + '\'' +
+                ", os='" + this.os + 
                 ", batteryCapacity=" + this.batteryCapacity +
                 '}';
     }

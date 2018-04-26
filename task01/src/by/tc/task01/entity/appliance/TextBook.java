@@ -44,5 +44,13 @@ public class TextBook extends Appliance {
 		this.numberOfPages = numberOfPages;
 	}
 	
+	@Override
+	public String toString(){
+		return "TextBook{" 
+				+ "title=" + this.title +
+		" ,subject=" + this.subject + 
+		", author=" + this.author +
+		", numberOfPages" + this.numberOfPages + "}";
+	}
 
 }

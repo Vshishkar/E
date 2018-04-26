@@ -7,7 +7,7 @@ public final class SearchCriteria {
 	}
 	
 	public static enum Laptop{
-		BATTARY_CAPACITY,OS,MEMORY_ROM,SYSTEM_MEMORY,CPU,DISPLAY_INCHS
+		BATTERY_CAPACITY,OS,MEMORY_ROM,SYSTEM_MEMORY,CPU,DISPLAY_INCHS
 	}
 	
 

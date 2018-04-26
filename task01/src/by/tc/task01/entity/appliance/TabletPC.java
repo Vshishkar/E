@@ -62,7 +62,7 @@ public class TabletPC  extends Appliance{
     public String toString() {
         return "TabletPC{" +
                 "displayInches=" + displayInches +
-                ", color='" + color + '\'' +
+                ", color='" + color + 
                 ", flashMemoryCapacity=" + flashMemoryCapacity +
                 ", memoryRom=" + memoryRom +
                 ", batteryCapacity=" + batteryCapacity +

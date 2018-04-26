@@ -1,4 +1,4 @@
-package by.tc.task01.entity.appliance.factory;
+package by.tc.task01.service.appliance.factory;
 
 import java.util.Map;
 

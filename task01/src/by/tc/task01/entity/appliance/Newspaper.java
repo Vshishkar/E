@@ -37,4 +37,13 @@ public class Newspaper extends Appliance {
 		this.numberOfPeriodocity = numberOfPeriodocity;
 	}
 
+	 @Override
+	    public String toString() {
+	        return "Newspaper{" +
+	                "title=" + this.title +
+	                ", paidOrFree='" + this.paidOrFree + 
+	                ", numberOfPeriodocity" + this.numberOfPeriodocity +
+	              '}';
+	    }
+	
 }

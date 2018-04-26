@@ -53,7 +53,7 @@ public class Speakers extends Appliance{
     public String toString() {
         return "Speakers{" +
                 "cordLength=" + cordLength +
-                ", frequencyRange='" + frequencyRange + '\'' +
+                ", frequencyRange='" + frequencyRange  +
                 ", numberOfSpeakers=" + numberOfSpeakers +
                 ", powerConsumption=" + powerConsumption +
                 '}';

@@ -10,16 +10,18 @@ import java.util.Map;
 import java.util.Set;
 
 import by.tc.task01.dao.ApplianceDAO;
+import by.tc.task01.dao.parser.ApplianceParser;
+import by.tc.task01.dao.parser.ApplianceParserImpl;
 import by.tc.task01.entity.appliance.Appliance;
-import by.tc.task01.entity.appliance.factory.ApplianceFactory;
 import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.service.appliance.factory.ApplianceFactory;
 
 public class ApplianceDAOImpl implements  ApplianceDAO {
 
 	
 
 	private static String root = System.getProperty("user.dir");
-	private static String src = "/src/by/tc/task01/dao/appliances_db.txt";
+	private static String src = "/src/appliances_db.txt";
 	
 	
 	
@@ -28,16 +30,14 @@ public class ApplianceDAOImpl implements  ApplianceDAO {
 						
 		ArrayList<Appliance> result = new ArrayList<>();
 		
-		ArrayList<String> appliances =  readAllAppliance();
-		// спорный момент,т.к при большой базе данных не выгодно читать все строки
+		ApplianceParser applianceParser = new ApplianceParserImpl();
 		
-		
-		for (String appliance: appliances){
-			if(checkAppliance(appliance,criteria)){				
-				Map<String,String> params = getKeysAndValues(appliance);
-				Appliance object =ApplianceFactory.buildAppliance(params,criteria.getGroupSearchName().getSimpleName()); 			
-				result.add(object);
-			}
+		ArrayList<String> appliances =  applianceParser.parse(root+src,criteria);
+				
+		for (String appliance: appliances){														
+			Map<String,String> params = getKeysAndValues(appliance);		
+			Appliance object = ApplianceFactory.buildAppliance(params,criteria.getGroupSearchName().getSimpleName()); 			
+			result.add(object);			
 		}		
 		return result;
 	}
@@ -60,59 +60,5 @@ public class ApplianceDAOImpl implements  ApplianceDAO {
 	}
 	
 	
-	public static <E> boolean checkAppliance(String appliance,Criteria<E> criteria){
-		
-		String[] typeAndAttributes = appliance.split(":");
-		
-		if(criteria.getGroupSearchName().getSimpleName().equals(typeAndAttributes[0])){ //проверка совпадения типа 
-			
-			String [] keysAndValues = typeAndAttributes[1].split(",");		
-			Set<E> keys = criteria.keySet();			
-			
-			int counter = 0;
-			
-			for(E key : keys){		
-				
-				Object value = criteria.getValue(key);				
-				String checkString = key.toString() + "=" + value.toString();				
-				
-				
-				for(String keyAndValue:keysAndValues){					
-					if(keyAndValue.contains(checkString)){						
-						counter++;					
-					}
-				}
-				
-			}
-			
-			if(counter == keys.size()){
-				return true;
-			}
-			else{
-				return false;
-			}
-			
-		}
-		else{
-			return false;
-		}
-		
-	}
-	
-	
-	public static ArrayList<String> readAllAppliance() {
-		ArrayList<String> products = new ArrayList<>();
-		try (BufferedReader bf = new BufferedReader(new FileReader(root + src))){
-			while (bf.ready()) {
-				String line = bf.readLine();
-				if(!line.isEmpty()) {
-					products.add(line);
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return products;
-	}
 	
 }

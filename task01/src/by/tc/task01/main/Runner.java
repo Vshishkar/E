@@ -25,8 +25,9 @@ public class Runner {
 						
 		appliances = service.find(criteriaLaptop);
 		
-		System.out.println(appliances.toString());
-		
+		for (Appliance appliance : appliances){
+			PrintApplianceInfo.print(appliance);
+		}
 		
 		// --------------------------------------------
 		
@@ -35,11 +36,9 @@ public class Runner {
 		
 		appliances = service.find(criteriaOven);
 		
-		System.out.println(appliances.toString());
-		
-		
-		
-		
+		for (Appliance appliance : appliances){
+			PrintApplianceInfo.print(appliance);
+		}
+					
 	}
-
 }

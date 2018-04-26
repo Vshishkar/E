@@ -74,9 +74,9 @@ public class VacuumCleaner extends Appliance{
         return "VacuumCleaner{" +
                 "cleaningWidth=" + this.cleaningWidth +
                 ", motorSpeedRegulation=" + this.motorSpeedRegulation +
-                ", wandType='" + this.wandType + '\'' +
-                ", bagType='" + this.bagType + '\'' +
-                ", filterType='" + this.filterType + '\'' +
+                ", wandType='" + this.wandType  +
+                ", bagType='" + this.bagType  +
+                ", filterType='" + this.filterType  +
                 ", powerConsumption=" + this.powerConsumption +
                 '}';
     }
