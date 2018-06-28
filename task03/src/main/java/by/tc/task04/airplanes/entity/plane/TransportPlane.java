@@ -1,4 +1,4 @@
-package by.tc.task03.entity.plane;
+package by.tc.task04.airplanes.entity.plane;
 
 public class TransportPlane extends Plane  {
 	
@@ -14,7 +14,7 @@ public class TransportPlane extends Plane  {
 
 	@Override
 	public String toString(){
-		return super.toString() + " " + this.cargoCapacity;
+		return super.toString() + " CargoCapacity " + this.cargoCapacity+ " ] \n";
 	}
 	@Override
 	public boolean equals(Object obj){

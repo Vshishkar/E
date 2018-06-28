@@ -1,7 +1,7 @@
-package by.tc.task03.entity.plane;
+package by.tc.task04.airplanes.entity.plane;
 
-public abstract class Plane implements Comparable<Plane> {
-		
+public abstract class Plane {
+	
 	private double length;
 	
 	private double height;
@@ -116,16 +116,10 @@ public abstract class Plane implements Comparable<Plane> {
 	
 	@Override
 	public String toString(){
-		return this.getClass().getSimpleName() + " " + this.crew + " " + this.fuelStock  + " " + this.height 
-				 + " " + this.length  + " " + this.maxRange + " " + this.model  + " " + this.topSpeed;
+		return this.getClass().getSimpleName() + " : [" + " Crew " + this.crew + "\t" + "Fuel stock " + this.fuelStock  +"\t" + "Height " + this.height 
+				 +"\t" + "Length " + this.length  + "\t" +"  MaxRange" + this.maxRange + "\t" +"Model " + this.model  +"\t" + "Top speed " + this.topSpeed  ;
 				
 	}
 	
-	@Override
-	public int compareTo(Plane o) {
-		double compareMaxRange =  o.getMaxRange();
-		
-		return (int) (this.getMaxRange() - compareMaxRange);
-	}
-	
+
 }

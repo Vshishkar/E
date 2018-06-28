@@ -1,4 +1,4 @@
-package by.tc.task03.entity.plane;
+package by.tc.task04.airplanes.entity.plane;
 
 public class PassangerPlane extends Plane  {
 
@@ -26,7 +26,7 @@ public class PassangerPlane extends Plane  {
 	
 	@Override
 	public String toString(){
-		return super.toString() + " " + this.planeClass + " " + this.passangerCapacity;
+		return super.toString() + " Plane class : " + this.planeClass + " \t PassangerCapacity :" + this.passangerCapacity+ " ] \n";
 	}
 	
 	@Override
